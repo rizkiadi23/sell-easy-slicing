@@ -51,7 +51,7 @@ p {
 }
 
 .bg-dark {
-    background-color: @gray-darker;
+    background-color: @portofolio;
     color: white;
 }
 
@@ -103,13 +103,13 @@ aside {
                 font-size: 13px;
                 color: @gray-darker;
                 &:hover {
-                    color: #eb3812;
+                    color: @theme-primary;
                 }
             }
             &.active {
                 > a,
                 > a:focus {
-                    color: #eb3812;
+                    color: @theme-primary !important;
                     background-color: transparent;
                     &:hover {
                         background-color: transparent;
@@ -120,19 +120,19 @@ aside {
     }
     @media (min-width: 768px) {
         background-color: transparent;
-        border-color: fade(white, 30%);
+        border-color: lighten(@theme-primary, 5%);
         .navbar-header .navbar-brand {
-            color: fade(white, 70%);
+            color: white;
             &:hover,
             &:focus {
-                color: #eb3812;
+                color: lighten(@theme-primary,3.14%);
             }
         }
         .nav > li > a,
         .nav > li > a:focus {
-            color: fade(white, 70%);
+            color: white;
             &:hover {
-                color: white;
+                color: lighten(@theme-primary,3.14%);
             }
         }
         &.affix {
@@ -146,7 +146,12 @@ aside {
                     color: darken(@theme-primary, 10%);
                 }
             }
-            .nav > li > a,
+            .nav > li > a {
+                color : @portofolio;
+                &:hover {
+                    color : @theme-primary;
+                }
+            }
             .nav > li > a:focus {
                 color: @gray-darker;
                 &:hover {
@@ -165,7 +170,7 @@ header {
     min-height: auto;
     .background-cover;
     background-position: center;
-    background-image: url('../img/header.jpg');
+    background-image: url('../img/main-bg.jpg');
     text-align: center;
     color: white;
     .header-content {
@@ -245,7 +250,7 @@ header {
         color: white;
         opacity: 0;
         display: block;
-        background: fade(@theme-primary, 90%);
+        background: fade(@portofolio-brighter, 50%);
         position: absolute;
         bottom: 0;
         text-align: center;
@@ -358,4 +363,32 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: @gray-darker;
+}
+
+// Footer Style By Rizki Adi Nugroho
+.footer-sellesy {
+    > p {
+        font-family: sans-serif, Merriweather, Helvetica Neue, Arial;
+        font-size: 11px;
+        text-align: center;
+    }
+    background-color: @portofolio;
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 5px;
+    .social-sellesy {
+        text-align: center;
+        padding-bottom: 10px;
+        > i, 
+        > a {
+            padding-right: 10px;
+            text-decoration: none;
+            color: white;
+        }
+        > a:hover {
+            padding-right: 10px;
+            text-decoration: none;
+            color: darken(@theme-primary, 10%);
+        }
+    }
 }
